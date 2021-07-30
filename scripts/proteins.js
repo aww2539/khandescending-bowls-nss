@@ -12,13 +12,13 @@ document.addEventListener(
 
 export const Proteins = () => {
     const allProteins = getProteins()
-    let html = "<ul>"
+    let html = "<ul class='proteins ul--options'>"
 
     const proteinHTMLArray = allProteins.map(        
         // The end result of this method will be an array of strings
         (proteinObject) => {
-            return `<li>
-                <input type="radio" value="${proteinObject.id}" />${proteinObject.name}
+            return `<li class='protein'>
+                <input type="radio" name="protein" value="${proteinObject.id}" />${proteinObject.name}
             </li>`
         }
     )

@@ -17,6 +17,18 @@ const database = {
             price: 7.50,
             isAnimal: true
         },
+        {
+            id: 3,
+            name: "Beef",
+            price: 8.49,
+            isAnimal: true
+        },
+        {
+            id: 4,
+            name: "Tofu",
+            price: 4.33,
+            isAnimal: false
+        },
     ],
     vegetables: [
         {
@@ -24,6 +36,24 @@ const database = {
             name: "Green beans",
             price: 0.45,
             isGreen: true
+        },
+        {
+            id: 2,
+            name: "Bean sprouts",
+            price: 0.7,
+            isGreen: true
+        },
+        {
+            id: 3,
+            name: "Lima beans",
+            price: 0.35,
+            isGreen: true
+        },
+        {
+            id: 4,
+            name: "Beets",
+            price: 0.5,
+            isGreen: false
         },
     ],
     carbs: [
@@ -73,12 +103,31 @@ export const setProtein = (proteinId) => {
     database.bowlBuilder.proteinId = proteinId
 }
 
+export const setVeggies = (vegetableId) => {
+    database.bowlBuilder.vegetableId = vegetableId
+}
+
+export const setCarbs = (carbId) => {
+    database.bowlBuilder.carbId = carbId
+}
+
+export const setSauces = (sauceId) => {
+    database.bowlBuilder.sauceId = sauceId
+}
+
+export const setSeasonings = (seasoningId) => {
+    database.bowlBuilder.seasoningId = seasoningId
+}
+
 export const getOrders = () => {
     return database.bowls.map(bowl => ({...bowl}))
 }
 
 export const getProteins = () => {
-    return database.proteins.map(protein => ({...protein}))
+    return database.proteins
+    .map(protein => ({...protein}))
+    .sort((a, b) => (a.name > b.name) ? 1 : -1)
+    .reverse()
 }
 
 export const getVeggies = () => {

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url(./proteins.css);
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.options {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.section--options {
+    margin: 1rem;
+}
+
+.ul--options {
+    list-style: none;
+    padding-inline-start: 0.4rem;
+}
